@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RxSovereign AI — Prescription Trust Network</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script><script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient a1"></div><div class="ambient a2"></div>
+<aside>
+ <div class="brand"><div class="mark">Rx</div><div>RxSovereign <em>AI</em><small>TRUST NETWORK</small></div></div>
+ <div class="side-label">WORKSPACE</div>
+ <a class="nav active" href="#overview">◈ <span>Overview</span></a><a class="nav" href="#generator">⌁ <span>Issue Prescription</span></a><a class="nav" href="#verify">✓ <span>Verify Rx</span></a><a class="nav" href="#ai">◌ <span>AI Intelligence</span></a><a class="nav" href="#patent">◇ <span>Patent Intel</span></a>
+ <div class="side-label">SYSTEM</div><a class="nav" href="#architecture">⌘ <span>Network Architecture</span></a>
+ <div class="side-bottom"><div class="online"><i></i> Network online</div><div class="version">RX-SOVEREIGN / 2.0</div></div>
+</aside>
+
+<main>
+<header><div><span class="eyebrow">PRESCRIPTION TRUST INFRASTRUCTURE</span><h1>Secure healthcare, <span>by design.</span></h1></div><div class="header-right"><div class="live"><i></i> LIVE PROTOTYPE</div><button onclick="document.querySelector('#generator').scrollIntoView({behavior:'smooth'})">+ New Prescription</button></div></header>
+
+<section id="overview">
+<div class="hero-grid">
+ <div class="hero-card"><div class="hero-kicker">THE TRUST LAYER FOR DIGITAL PRESCRIPTIONS</div><h2>Every prescription gets a <strong>verifiable identity.</strong></h2><p>Cryptographic integrity, QR traceability and explainable AI risk signals — connected in one intelligent network.</p><div class="hero-buttons"><button class="primary" onclick="go('generator')">Create secure Rx <b>→</b></button><button class="ghost" onclick="go('verify')">Verify a prescription</button></div><div class="hero-stat"><span><b>SHA-256</b> integrity fingerprint</span><span><b>QR</b> instant traceability</span><span><b>AI</b> explainable risk</span></div></div>
+ <div class="security-core"><div class="rings r1"></div><div class="rings r2"></div><div class="core"><div>⌬</div><b>TRUSTED</b><small>SECURITY CORE</small></div><div class="orbit-label ol1">HASH<br><b>VERIFIED</b></div><div class="orbit-label ol2">QR<br><b>READY</b></div></div>
+</div>
+<div class="kpis"><div><small>SECURED PRESCRIPTIONS</small><b id="kpiRx">0</b><span>+ live ledger</span></div><div><small>VERIFICATION LATENCY</small><b>1.8s</b><span>instant validation</span></div><div><small>INTEGRITY MODEL</small><b>SHA-256</b><span>tamper-evident</span></div><div><small>RISK ENGINE</small><b>AI / RULES</b><span>explainable signals</span></div></div>
+</section>
+
+<section id="generator" class="module"><div class="module-head"><div><span class="eyebrow">01 / ISSUANCE</span><h2>Secure Prescription</h2><p>Issue a digital record and bind it to a unique security fingerprint.</p></div><span class="chip green">● READY</span></div>
+<div class="workspace-grid"><div class="glass form"><div class="form-title">Patient & clinician details</div><div class="fields">
+<label>Patient name<input id="patient" placeholder="Ananya Sharma"></label><label>Patient ID<input id="patientId" placeholder="PT-2026-001"></label><label>Doctor name<input id="doctor" placeholder="Dr. R. Kumar"></label><label>Registration ID<input id="regid" placeholder="TN-MED-45821"></label><label>Medicine<input id="medicine" placeholder="Amoxicillin"></label><label>Dosage<input id="dosage" placeholder="500mg twice daily"></label><label>Valid until<input id="validUntil" type="date"></label><label>Purpose<select id="purpose"><option>General Treatment</option><option>Follow-up Care</option><option>Emergency Care</option></select></label></div><button class="primary wide" onclick="generate()">Generate & Sign Prescription <b>→</b></button></div>
+<div class="glass rx-output" id="rxOutput"><div class="placeholder"><div class="placeholder-icon">⌬</div><h3>Secure record preview</h3><p>Complete the details to mint a prescription identity.</p></div></div></div></section>
+
+<section id="verify" class="module"><div class="module-head"><div><span class="eyebrow">02 / VERIFICATION</span><h2>Trust Check</h2><p>One ID. Five security checks. A clear decision.</p></div></div>
+<div class="workspace-grid"><div class="glass verify-input"><div class="form-title">Prescription ID</div><input id="verifyId" class="biginput" placeholder="RX-2026-XXXXXXXX"><button class="primary wide" onclick="verify()">Run trust verification <b>→</b></button><div class="hint">Generate an Rx above, then paste its ID here.</div></div><div class="glass verify-result" id="verifyResult"><div class="placeholder"><div class="placeholder-icon">✓</div><h3>Awaiting verification</h3><p>The network will validate existence, integrity, clinician record and lifecycle.</p></div></div></div></section>
+
+<section id="ai" class="module"><div class="module-head"><div><span class="eyebrow">03 / INTELLIGENCE</span><h2>AI Risk Command Center</h2><p>Explainable signals turn prescription data into an actionable risk posture.</p></div><button class="ghost" onclick="analyze()">Run AI analysis ↗</button></div>
+<div class="ai-grid"><div class="glass score"><div class="smalltitle">CURRENT RISK</div><div class="score-ring"><div><b id="score">--</b><small>/ 100</small></div></div><strong id="riskLabel">READY FOR ANALYSIS</strong><p id="riskDesc">Create a prescription to activate the intelligence engine.</p></div>
+<div class="glass chart"><div class="smalltitle">RISK SIGNAL DISTRIBUTION</div><canvas id="chart"></canvas></div>
+<div class="glass signals"><div class="smalltitle">LIVE SECURITY SIGNALS</div><div class="sig"><span>Clinician identity</span><b id="s1">WAITING</b></div><div class="sig"><span>Dosage anomaly</span><b id="s2">WAITING</b></div><div class="sig"><span>Record integrity</span><b id="s3">WAITING</b></div><div class="sig"><span>Lifecycle / expiry</span><b id="s4">WAITING</b></div><div class="sig"><span>Duplicate pattern</span><b id="s5">WAITING</b></div></div></div></section>
+
+<section id="patent" class="module"><div class="module-head"><div><span class="eyebrow">04 / PATENT INTELLIGENCE</span><h2>Medicine Intelligence</h2><p>Prototype decision-support layer for patent awareness and market context.</p></div></div>
+<div class="glass searchbar"><input id="patentInput" placeholder="Search medicine — Amoxicillin, Metformin, Semaglutide..."><button class="primary" onclick="patent()">Analyze medicine</button></div><div id="patentResult"></div><div class="notice">Prototype data is illustrative. Production deployment would use authoritative jurisdiction-specific patent sources and clinical systems.</div></section>
+
+<section id="architecture" class="module architecture"><div class="module-head"><div><span class="eyebrow">NETWORK</span><h2>How trust moves through the system</h2></div></div><div class="network"><div>DOCTOR<small>ISSUER</small></div><i>→</i><div>PRESCRIPTION<small>DATA</small></div><i>→</i><div class="hot">HASH<small>INTEGRITY</small></div><i>→</i><div>QR ID<small>TRACEABILITY</small></div><i>→</i><div class="hot">AI ENGINE<small>RISK</small></div><i>→</i><div>PHARMACY<small>VERIFIER</small></div></div></section>
+<footer><div class="brand"><div class="mark">Rx</div><div>RxSovereign <em>AI</em></div></div><span>MATH NOVA 2026 • HACKATHON PROTOTYPE</span><span>SECURE · VERIFIABLE · INTELLIGENT</span></footer>
+<div id="toast"></div>
+<script src="script.js"></script>
+</main>
+</body></html>
